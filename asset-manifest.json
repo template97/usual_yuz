@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/usual_yuz/static/css/main.073c9b0a.css",
+    "main.js": "/usual_yuz/static/js/main.b986f280.js",
+    "index.html": "/usual_yuz/index.html",
+    "main.073c9b0a.css.map": "/usual_yuz/static/css/main.073c9b0a.css.map",
+    "main.b986f280.js.map": "/usual_yuz/static/js/main.b986f280.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b986f280.js"
+  ]
+}
