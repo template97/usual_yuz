@@ -1,0 +1,12 @@
+#main-layout {
+  width: 100vw;
+  height: 100vh;
+
+  #main-header {
+    position: sticky;
+    width: 100%;
+    height: 56px;
+
+    background-color: lightgray;
+  }
+}
