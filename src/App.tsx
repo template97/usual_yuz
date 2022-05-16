@@ -1,16 +1,9 @@
-import React from "react";
-import "./App.scss";
-import Button from "./components/Button";
+import React from 'react';
+import './App.scss';
+import Button from './components/Button';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        {"Welcome to Jackson's Page"}
-        <Button size="medium">hello</Button>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+  return <></>;
+};
 
 export default App;
