@@ -2,25 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { Color, Size } from ".";
 
-const solidStyle = (
-  primary: string,
-  secondary: string,
-  tertiary: string,
-  extra: string
-) => css`
-  background-color: ${primary};
-  color: white;
-
-  &:hover {
-    background-color: ${secondary};
-    box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.4);
-  }
-  &:disabled {
-    background-color: ${tertiary};
-    color: ${extra};
-  }
-`;
-
 const buttonSize = {
   small: 32,
   medium: 40,

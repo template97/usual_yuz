@@ -46,6 +46,7 @@
   },
   "homepage": "https://template97.github.io/usual_yuz/",
   "devDependencies": {
-    "@types/styled-components": "^5.1.25"
+    "@types/styled-components": "^5.1.25",
+    "eslint-plugin-react": "^7.29.4"
   }
 }
