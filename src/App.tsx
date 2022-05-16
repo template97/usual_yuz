@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.scss';
-import Button from './components/Button';
+import RootRouter from './routers/RootRouter';
 
 const App: React.FC = () => {
-  return <></>;
+  return <RootRouter/>;
 };
 
 export default App;

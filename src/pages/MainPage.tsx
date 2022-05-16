@@ -1,9 +1,13 @@
 import './MainPage.scss';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-interface Props {}
-const MainPage: React.FC<Props> = (props) => {
-  return <></>;
+const MainPage: React.FC = () => {
+  return (
+    <>
+      <Link to="about-me">About Me</Link>
+    </>
+  );
 };
 
 export default MainPage;
