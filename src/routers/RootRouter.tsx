@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from 'src/layout/MainLayout';
-import { MainPathList, Path2Element } from '.';
+import { MainPathList, PathInfo } from '.';
 
 const RootRouter: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const RootRouter: React.FC = () => {
       <MainLayout>
         <Routes>
           {MainPathList.map((path) => (
-            <Route key={path} path={`/${path}`} element={Path2Element[path]} />
+            <Route key={path} path={`/${path}`} element={PathInfo[path].element} />
           ))}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
