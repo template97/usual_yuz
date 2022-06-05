@@ -2,7 +2,6 @@ import axios, { CancelToken } from 'axios';
 
 type AxiosMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 
-// const token = 'RGAPI-aaa7a2f9-0a34-46bd-863b-2bd7fd850648';
 // const headers = { Authorization: `${token}` };
 const headers = {};
 

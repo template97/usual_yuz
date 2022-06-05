@@ -12,5 +12,11 @@
     height: 56px;
 
     background-color: lightgray;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
   }
 }

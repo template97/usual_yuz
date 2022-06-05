@@ -1,6 +1,6 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { Color, Size } from ".";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { MainColor, Size } from '.';
 
 const buttonSize = {
   small: 32,
@@ -49,19 +49,19 @@ const commonButtonStyle = (size: Size) => css`
 const SolidButton = styled.button<Props>`
   ${(props) => commonButtonStyle(props.size)}
 
-  background-color: ${Color.LIGHT_SECONDARY};
+  background-color: ${MainColor.LIGHT_SECONDARY};
   color: white;
 
   &:hover {
-    background-color: ${Color.LIGHT_PRIMARY};
+    background-color: ${MainColor.LIGHT_PRIMARY};
     box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.4);
   }
   &:disabled {
-    background-color: ${Color.LIGHT_TERTIARY};
+    background-color: ${MainColor.LIGHT_TERTIARY};
   }
 `;
 
-interface Props extends React.ComponentPropsWithoutRef<"button"> {
+interface Props extends React.ComponentPropsWithoutRef<'button'> {
   size: Size;
 }
 
