@@ -1,8 +1,9 @@
 import React from 'react';
+import ProjectPage from 'src/pages/project/ProjectPage';
 import AboutMePage from '../pages/about-me/AboutMePage';
 import MainPage from '../pages/MainPage';
 
-export const MainPathList = ['', 'about-me'] as const;
+export const MainPathList = ['', 'about-me', 'projects'] as const;
 export type MainPath = typeof MainPathList[number];
 
 interface Info {
@@ -17,5 +18,9 @@ export const PathInfo: { [key in MainPath]: Info } = {
   'about-me': {
     element: <AboutMePage />,
     title: 'About Me',
+  },
+  projects: {
+    element: <ProjectPage />,
+    title: 'Projects',
   },
 };

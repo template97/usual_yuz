@@ -6,7 +6,7 @@ const MainPage: React.FC = () => {
   //   axiosRequest('GET', 'https://kr.api.riotgames.com/lol/platform/v3/champion-rotations');
   // }, []);
 
-  return <div className="home">Welcome To My Home Page!</div>;
+  return <div className="main-page">Welcome To My Home Page!</div>;
 };
 
 export default MainPage;

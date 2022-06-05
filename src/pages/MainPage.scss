@@ -1,9 +1,9 @@
 @import 'src/layout/index.scss';
 
-.home {
+.main-page {
+  @include contentLayout;
+
   display: flex;
   justify-content: center;
   align-items: center;
-
-  min-height: calc(100% - #{$main-header-height});
 }
