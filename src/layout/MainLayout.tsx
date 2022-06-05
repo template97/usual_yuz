@@ -1,7 +1,7 @@
 import './MainLayout.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MainPathList, Path2Title } from '../routers';
+import { MainPathList, Path2Title } from 'src/routers';
 
 interface Props {
   children?: React.ReactNode;

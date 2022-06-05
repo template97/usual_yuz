@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import MainLayout from '../layout/MainLayout';
+import MainLayout from 'src/layout/MainLayout';
 import { MainPathList, Path2Element } from '.';
 
 const RootRouter: React.FC = () => {
