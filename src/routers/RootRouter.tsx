@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from 'src/layout/MainLayout';
+import MainPage from 'src/pages/MainPage';
 import { MainPathList, PathInfo } from '.';
 
 const RootRouter: React.FC = () => {
@@ -8,6 +9,7 @@ const RootRouter: React.FC = () => {
     <BrowserRouter>
       <MainLayout>
         <Routes>
+          <Route path="/" element={<MainPage />} />
           {MainPathList.map((path) => (
             <Route key={path} path={`/${path}`} element={PathInfo[path].element} />
           ))}
