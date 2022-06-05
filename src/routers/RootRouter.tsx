@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import MainPage from '../pages/MainPage';
-import AboutMePage from '../pages/about-me/AboutMePage';
 import MainLayout from '../layout/MainLayout';
+import { MainPathList, Path2Element } from '.';
 
 const RootRouter: React.FC = () => {
   return (
     <BrowserRouter>
       <MainLayout>
         <Routes>
-          <Route path="/" element={<MainPage />}></Route>
-          <Route path="about-me" element={<AboutMePage />} />
+          {MainPathList.map((path) => (
+            <Route key={path} path={`/${path}`} element={Path2Element[path]} />
+          ))}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </MainLayout>
