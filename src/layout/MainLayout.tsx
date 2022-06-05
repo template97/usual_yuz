@@ -10,7 +10,6 @@ const MainLayout: React.FC<Props> = (props) => {
   return (
     <div id="main-layout">
       <div id="main-header">HEADER</div>
-      {/* <div id="main-left-panel">LEFTPANEL</div> */}
       {children}
     </div>
   );

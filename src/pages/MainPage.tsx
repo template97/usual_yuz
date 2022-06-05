@@ -10,6 +10,22 @@ const MainPage: React.FC = () => {
   return (
     <>
       <Link to="about-me">About Me</Link>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
+      <div className="some">a</div>
     </>
   );
 };

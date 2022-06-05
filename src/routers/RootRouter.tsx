@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import MainPage from '../pages/MainPage';
 import AboutMePage from '../pages/about-me/AboutMePage';
 import MainLayout from '../layout/MainLayout';
@@ -11,6 +11,7 @@ const RootRouter: React.FC = () => {
         <Routes>
           <Route path="/" element={<MainPage />}></Route>
           <Route path="about-me" element={<AboutMePage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </MainLayout>
     </BrowserRouter>
