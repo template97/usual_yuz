@@ -1,8 +1,7 @@
 import axios, { CancelToken } from 'axios';
 
-type AxiosMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
+export type AxiosMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 
-// const headers = { Authorization: `${token}` };
 const headers = {};
 
 export const axiosRequest = (method: AxiosMethod, url: string, data?: any, cancelToken?: CancelToken) => {
@@ -29,4 +28,17 @@ export const axiosRequest = (method: AxiosMethod, url: string, data?: any, cance
         data,
       });
   }
+};
+
+export const addQueryParam = <T extends {}>(url: string, params: { [key: string]: any }) => {
+  const hasQueryAlready = url.includes('?');
+
+  const keys = Object.keys(params);
+  keys
+    .filter((key) => !!params[key])
+    .forEach((key, i) => {
+      if (!hasQueryAlready && i === 0) url += `?${key}=${params[key]}`;
+      else url += `&${key}=${params[key]}`;
+    });
+  return url;
 };

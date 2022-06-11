@@ -1,22 +1,37 @@
-import { AxiosResponse } from 'axios';
+import { AxiosResponse, CancelToken } from 'axios';
 import envConfig from 'src/config';
-import { axiosRequest } from '..';
-import { SummonerDto } from './interface';
+import { addQueryParam, AxiosMethod, axiosRequest } from '..';
+import { MatchQuery, SummonerDto } from './interface';
 
 const RIOT_API_URL_KR = 'https://kr.api.riotgames.com';
 const RIOT_API_URL_ASIA = 'https://asia.api.riotgames.com';
-const GET_summoner_by_name = (name: string): Promise<AxiosResponse<SummonerDto>> => {
-  return axiosRequest(
-    'GET',
-    `${RIOT_API_URL_KR}/lol/summoner/v4/summoners/by-name/${name}?api_key=${envConfig.riotKey}`
-  );
+
+const GET_summoner_by_name = (name: string, cancelToken?: CancelToken): Promise<AxiosResponse<SummonerDto>> => {
+  const url = `/lol/summoner/v4/summoners/by-name/${name}`;
+  return riotApiRequest('GET', 'kr', url, cancelToken);
 };
 
-const GET_match_by_puuid = (puuid: string): Promise<AxiosResponse<SummonerDto>> => {
-  return axiosRequest(
-    'GET',
-    `${RIOT_API_URL_ASIA}/lol/match/v5/matches/by-puuid/${puuid}/ids?start=0&count=20&api_key=${envConfig.riotKey}`
-  );
+const GET_match_by_puuid = (
+  puuid: string,
+  queryParam: MatchQuery,
+  cancelToken?: CancelToken
+): Promise<AxiosResponse<string[]>> => {
+  const url = addQueryParam(`/lol/match/v5/matches/by-puuid/${puuid}/ids`, queryParam);
+  return riotApiRequest('GET', 'asia', url, null, cancelToken);
+};
+
+const riotApiRequest = (
+  method: AxiosMethod,
+  region: 'asia' | 'kr',
+  url: string,
+  data?: any,
+  cancelToken?: CancelToken
+) => {
+  const fullUrl = addQueryParam(`${region === 'asia' ? RIOT_API_URL_ASIA : RIOT_API_URL_KR}${url}`, {
+    api_key: envConfig.riotKey,
+  });
+
+  return axiosRequest(method, fullUrl, data, cancelToken);
 };
 
 export const RiotApi = {

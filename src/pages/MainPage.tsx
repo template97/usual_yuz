@@ -9,7 +9,10 @@ const MainPage: React.FC = () => {
 
   const getSome = async () => {
     const res = await RiotApi.GET_summoner_by_name('랜턴팔이%20서폿');
-    RiotApi.GET_match_by_puuid(res.data.puuid);
+    RiotApi.GET_match_by_puuid(res.data.puuid, {
+      start: 0,
+      count: 10,
+    });
   };
 
   return <div className="main-page">Welcome To My Home Page!</div>;
