@@ -1,20 +1,7 @@
 import './MainPage.scss';
-import React, { useEffect } from 'react';
-import { RiotApi } from 'src/api/riot';
+import React from 'react';
 
 const MainPage: React.FC = () => {
-  useEffect(() => {
-    getSome();
-  }, []);
-
-  const getSome = async () => {
-    const res = await RiotApi.GET_summoner_by_name('랜턴팔이%20서폿');
-    RiotApi.GET_match_by_puuid(res.data.puuid, {
-      start: 0,
-      count: 10,
-    });
-  };
-
   return <div className="main-page">Welcome To My Home Page!</div>;
 };
 
