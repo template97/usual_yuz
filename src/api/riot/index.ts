@@ -25,6 +25,15 @@ const GET_match_by_matchId = (matchId: string, cancelToken?: CancelToken): Promi
   return riotApiRequest('GET', 'asia', url, null, cancelToken);
 };
 
+const GET_champion_info = (cancelToken?: CancelToken): Promise<AxiosResponse<any>> => {
+  return axiosRequest(
+    'GET',
+    'http://ddragon.leagueoflegends.com/cdn/12.11.1/data/en_US/champion.json',
+    null,
+    cancelToken
+  );
+};
+
 const riotApiRequest = (
   method: AxiosMethod,
   region: 'asia' | 'kr',
@@ -43,4 +52,5 @@ export const RiotApi = {
   GET_summoner_by_name,
   GET_match_by_puuid,
   GET_match_by_matchId,
+  GET_champio_info: GET_champion_info,
 };

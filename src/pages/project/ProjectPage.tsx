@@ -11,12 +11,27 @@ const ProjectPage: React.FC = () => {
       count: 1,
     });
 
-    RiotApi.GET_match_by_matchId(list.data[0]);
+    const match = await RiotApi.GET_match_by_matchId(list.data[0]);
+
+    let result = '';
+    match.data.info.participants.forEach((part) => {
+      result += `${part.summonerName} : ${part.championName}\n`;
+      console.log(part);
+    });
+
+    setDataResult(result);
   };
 
   const [nickname, setNickname] = useState<string>('');
-  // const [result, ] = useState<>();
+  const [dataResult, setDataResult] = useState<string>('');
 
+  useEffect(() => {
+    (async () => {
+      const res = RiotApi.GET_champio_info();
+      console.log(res);
+    })();
+    return () => {};
+  }, []);
   return (
     <div className="project-page">
       <input
@@ -31,6 +46,7 @@ const ProjectPage: React.FC = () => {
       <Button size="medium" onClick={getSome}>
         찾기
       </Button>
+      {dataResult}
     </div>
   );
 };
